@@ -99,7 +99,7 @@ public class Canvas2ImagePlugin extends CordovaPlugin {
             // long startTime = System.currentTimeMillis();
             OutputStream out = contentResolver.openOutputStream(imageUri);
 
-            this.bmp.compress(this.format.equals("png") ? Bitmap.CompressFormat.PNG : Bitmap.CompressFormat.JPEG, 100, out);
+            this.bmp.compress(this.format.equals("png") ? Bitmap.CompressFormat.PNG : Bitmap.CompressFormat.JPEG, 50, out);
             out.flush();
             out.close();
 

@@ -12,7 +12,8 @@ module.exports = {
 		successCallback,
 		failureCallback,
 		canvasId,
-		format
+		format,
+		quality
 	) {
 		format = typeof format !== "undefined" ? format : "png"; // default value
 
@@ -31,7 +32,7 @@ module.exports = {
 					? document.getElementById(canvasId)
 					: canvasId;
 			var imageData = canvas
-				.toDataURL("image/" + format, 1)
+				.toDataURL("image/" + format, Number(quality) || 1)
 				.replace("data:image/" + format + ";base64,", "");
 			return cordova.exec(
 				successCallback,
